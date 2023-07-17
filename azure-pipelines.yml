@@ -39,5 +39,4 @@ stages:
       - job: secretVariables
         steps:
           - script: echo $(PASSWORD)
-            env:
-              PASSWORD: $(PASSWORD)
+          
