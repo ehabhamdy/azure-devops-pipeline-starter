@@ -27,9 +27,17 @@ stages:
             echo Add other tasks to build, test, and deploy your project.
             echo See https://aka.ms/yaml
           displayName: 'Run a multi-line script'
+          
       - job: exploration
         steps:
           - script: ls
+
       - job: envVariables
         steps:
-          - script: echo $(DATABASE_URL)
+          - script: echo $(PASSWORD)
+      
+      - job: secretVariables
+        steps:
+          - script: echo $(PASSWORD)
+            env:
+              PASSWORD: $(PASSWORD)
