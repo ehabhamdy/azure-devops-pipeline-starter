@@ -38,5 +38,11 @@ stages:
       
       - job: secretVariables
         steps:
-          - script: echo $(PASSWORD)
+          - bash: |
+              echo "My second secret variable: $PASSWORD"
+              if [ "$PASSWORD" = "bar" ]; then
+                  echo "Strings are equal."
+              else
+                  echo "Strings are not equal."
+              fi
           
