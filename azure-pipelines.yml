@@ -54,8 +54,16 @@ stages:
               EOF
 
               echo "Created .env file with the following content:"
-              cat .env
-            # env:
-            #   PASSWORD: $(PASSWORD)
+            env:
+              PASSWORD: $(PASSWORD)
               
             displayName: saveToEnvFile
+          
+          - bash: |
+              cat .env
+            displayName: checkfileavaialbility  
+      
+      - job: checkFileInNewJob
+        steps:
+          - bash: cat .env
+
