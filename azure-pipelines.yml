@@ -55,4 +55,7 @@ stages:
 
               echo "Created .env file with the following content:"
               cat .env
+            env:
+              PASSWORD: $(PASSWORD)
+              
             displayName: saveToEnvFile
