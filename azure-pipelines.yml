@@ -13,28 +13,28 @@ stages:
   - stage: CI
     displayName: Continuous Integration
     jobs:
-      - job: firstJob
-        steps:
-        - script: echo Hello, world!
-          displayName: 'Run a one-line script'
+      # - job: firstJob
+      #   steps:
+      #   - script: echo Hello, world!
+      #     displayName: 'Run a one-line script'
 
-        - script: |
-            echo Add other tasks to build, test, and deploy your project.
-            echo See https://aka.ms/yaml
-          displayName: 'Run a multi-line script'
+      #   - script: |
+      #       echo Add other tasks to build, test, and deploy your project.
+      #       echo See https://aka.ms/yaml
+      #     displayName: 'Run a multi-line script'
 
-        - script: |
-            echo Add other tasks to build, test, and deploy your project.
-            echo See https://aka.ms/yaml
-          displayName: 'Run a multi-line script'
+      #   - script: |
+      #       echo Add other tasks to build, test, and deploy your project.
+      #       echo See https://aka.ms/yaml
+      #     displayName: 'Run a multi-line script'
           
-      - job: exploration
-        steps:
-          - script: ls
+      # - job: exploration
+      #   steps:
+      #     - script: ls
 
-      - job: envVariables
-        steps:
-          - script: echo $(PASSWORD)
+      # - job: envVariables
+      #   steps:
+      #     - script: echo $(PASSWORD)
       
       - job: secretVariables
         steps:
@@ -45,4 +45,5 @@ stages:
               else
                   echo "Strings are not equal."
               fi
-          
+            env:
+              PASSWORD: $(PASSWORD)
