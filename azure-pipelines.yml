@@ -47,3 +47,12 @@ stages:
               fi
             env:
               PASSWORD: $(PASSWORD)
+          
+          - bash: |
+              cat <<EOF > .env
+              DATABASE_URL="$PASSWORD"
+              EOF
+
+              echo "Created .env file with the following content:"
+              cat .env
+            displayName: saveToEnvFile
