@@ -30,3 +30,6 @@ stages:
       - job: exploration
         steps:
           - script: ls
+      - job: envVariables
+        steps:
+          - script: echo $(DATABASE_URL)
