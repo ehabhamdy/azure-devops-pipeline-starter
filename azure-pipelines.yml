@@ -50,12 +50,12 @@ stages:
           
           - bash: |
               cat <<EOF > .env
-              DATABASE_URL="$PASSWORD"
+              DATABASE_URL="$DATABASE_URL"
               EOF
 
               echo "Created .env file with the following content:"
               cat .env
-            env:
-              PASSWORD: $(PASSWORD)
+            # env:
+            #   PASSWORD: $(PASSWORD)
               
             displayName: saveToEnvFile
